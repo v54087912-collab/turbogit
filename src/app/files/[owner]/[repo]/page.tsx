@@ -1,13 +1,4 @@
-import dynamic from "next/dynamic";
-
-const FilesClient = dynamic(() => import("./files-client"), {
-  ssr: false,
-  loading: () => (
-    <div className="min-h-screen flex items-center justify-center">
-      <div className="w-6 h-6 border-2 border-text-accent border-t-transparent rounded-full animate-spin" />
-    </div>
-  ),
-});
+import FilesClient from "./files-client";
 
 export function generateStaticParams() {
   return [{ owner: "_", repo: "_" }];
